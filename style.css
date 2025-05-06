@@ -1,0 +1,83 @@
+:root {
+  --bg: #f7fafc;
+  --text: #2d3748;
+  --accent: #4a5568;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg);
+  color: var(--text);
+  text-align: center;
+  padding: 4rem;
+}
+
+h1 {
+  font-size: 2.25rem;
+  margin-bottom: 0.75rem;
+}
+
+p {
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+}
+
+.gear {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 1.25rem;
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.container img {
+  width: 70%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* -------------- Responsive -------------- */
+@media (max-width: 640px) {
+  body {
+    padding: 2rem 1rem;
+  }
+
+  .container {
+    flex-direction: column-reverse; /* 文字在上，圖片在下 */
+    gap: 2rem;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .container img {
+    width: 85%;
+  }
+}
